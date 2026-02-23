@@ -1,0 +1,133 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f1f1f1;
+}
+.wrapper{
+    box-shadow: 0px 1px 3px 0px #0000001A;
+   
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background-color: #fff;
+    min-width: 500px;
+
+}
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.logo>img{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    
+}
+.logo>h2{
+    font-weight: 400;
+    font-size: 16px;
+}
+.header{
+    /* border: 1px solid black;  */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+     padding: 10px 20px;
+}
+.header>h1{
+    font-size: 20px;
+    font-weight: 500;
+}
+.header-sub-heading{
+    font-weight: 600;
+    color: rgb(151, 150, 150);  
+    /* border: 1px solid black;  */
+    margin: 0; 
+}
+.header-heading{
+    /* border: 1px solid black;  */
+    margin: 0;
+}
+
+form{
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    /* gap: 20px; */
+    /* border: 1px solid black; */
+}
+
+.email-form{
+    /* border: 1px solid black; */
+    margin-bottom: 20px;
+
+}
+.wrapper>footer{
+    background: #e8e7e7;
+     padding: 10px 20px;
+     color: #646464;
+     font-size: 8px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+input{
+    border: none;
+    width: 80%;
+    padding: 10px;
+     color: #646464;
+     outline: none;
+
+}
+
+.icon{
+    font-size: 20px;
+     color: #646464;
+}
+
+.input-box{
+    border: .5px solid #c6c3c3;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    margin-top: 4px;
+}
+
+.form-btn-password-visible{
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.login-btn{
+    padding: 16px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    background-color: rgb(52, 111, 239);
+    cursor: pointer;
+}
+.forgot-password{
+    display: flex;
+    justify-content: end;
+    margin-bottom: 20px;
+     color: #646464;
+     font-size: 16px;
+
+}
+.forgot-password>button{
+    padding: 16px;
+    border: none;
+    background: none;
+     color: #646464;
+    cursor: pointer;
+}
+
+/* <i class="fa-solid fa-eye-slash"></i> */

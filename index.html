@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./styles/views/login.css">
+</head>
+<body>
+    <div class="container">
+       <div class="wrapper">
+             <div class="header">
+                <div class="logo">
+                    <img src="./assets/logo-img.jpeg" alt="RFP manager">
+                    <h2>RFP Manager</h2>
+                </div>
+                <h1 class="header-heading">Login to RFP Manager</h1>
+                <h6 class="header-sub-heading">Enter your email and password to access your account</h6>
+            </div>
+            <form method="post" id="login-form">
+                <div class="email-form">
+                    <label for="email">Email</label>
+                    <div class="input-box">
+                        <span class="icon"><i class="fa-regular fa-envelope"></i></span>
+                        <input type="email" required placeholder="enter your email" id="email" name="email">
+                    </div>
+                </div>
+
+                <div class="password-form">
+                    <label for="password">Password</label>
+                    <div class="input-box">
+                        <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                        <input type="password" required id="login-password" name="password" placeholder="enter password" >
+                        <button type="button" class="form-btn-password-visible icon"><i class="fa-solid fa-eye"></i></button>
+                    </div>
+                </div>
+                <div class="forgot-password">
+                    <button type="button" id="forget-password-btn">Forgot password ?</button>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+            <footer>
+                <h2>&copy; 2026 RFP Manager. All rights reserved.</h2>
+            </footer>
+       </div>
+    </div>
+    <script type="module" src="./js/pages/login.js"></script>
+</body>
+</html>

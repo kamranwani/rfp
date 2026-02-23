@@ -1,0 +1,42 @@
+.tab-item{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 8px;
+    
+    background: #fff;
+    cursor: pointer;
+    padding: 20px 20px;
+    border: none;
+    position: relative;
+}
+
+.tab-item.draft{
+    background: #f2f2f2;
+}
+
+.tab-item.submitted{
+    background: rgb(234, 197, 234);
+    color: purple;
+}
+
+.tab-item.review{
+    background: rgb(158, 179, 243);
+    color: rgb(0, 2, 128);
+}
+
+.tab-item.approved{
+    background: rgb(165, 237, 165);
+    color: rgb(4, 128, 0);
+}
+
+.tab-item.active::after{
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    display: block;
+    position: absolute;
+    bottom: -8px;
+    left: 0px;
+    border-radius: 6px;
+}

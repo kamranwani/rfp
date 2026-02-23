@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Documents</title>
+     <!-- <link rel="stylesheet" href="../../styles/layout/grid.css"> -->
+    <link rel="stylesheet" href="../../styles/layout/header.css">
+    <link rel="stylesheet" href="../../styles/views/project-documents.css">
+    <!-- <link rel="stylesheet" href="../../styles/pipeline.css"> -->
+    <!-- <link rel="stylesheet" href="../../styles/components/card.css"> -->
+    <!-- <link rel="stylesheet" href="../../styles/layout/sidebar.css"> -->
+    <!-- <link rel="stylesheet" href="../../styles/main.css"> -->
+</head>
+<body>
+     <div class="app">
+        <main class="app-main">
+            <!-- header start here x -->
+             <header class="app-header">
+                <div class="left">
+                    <h2 class="header-project-name"></h2>
+                </div>
+                <div class="right">
+                    <div class="search-box">
+                        <input type="text" placeholder="search..." class="input-search">
+                    </div>
+                    <div class="newWorkspace">
+                        <button class="new-workspace-btn">Add Workspace</button>
+                    </div>
+                    <div class="avatar">
+                        <img src="../../assets/avatar.png" alt="admin" class="avatar-img">
+                    </div>
+                </div>
+             </header>
+             <!-- Project details bar  -->
+            <section class="project-details-bar">
+                <div class="project-details-bar-top">
+                    <div class="client-name-box box">
+                        Client
+                        <div class="client-name box-value">
+
+                        </div>
+                    </div>
+                    <div class="submission-deadline box">
+                        Submission Date
+                        <div class="submission-date box-value">
+                        
+                        </div>
+                        <div class="remaining-period-submission">
+
+                        </div>
+                    </div>
+                    <div class="overall-progress-box box">
+                        Overall Progress
+                        <div class="overall-progress box-value">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="line-break"></div>
+                <div class="project-details-bar-bottom">
+                    <div class="assigned-team-box box">
+                        Assigned Team
+                        <div class="assigned-team box-value">
+
+                        </div>
+                    </div>
+                    <div class="project-manager-box box">
+                        Project Manager
+                        <div class="project-manager box-value">
+                            
+                        </div>
+                    </div>
+                    <div class="project-statuses">
+                        <div class="priority-box box">
+                            Priority
+                            <div class="priority box-value"></div>
+                        </div>
+                        <div class="stage-box box">
+                            Stage
+                            <div class="stage box-value"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- project document manager  -->
+            <section class="project-documents-bar">
+                <section class="upload-document-bar">
+                    <div class="searchDocument">
+                        <input type="text" placeholder="search documents.." class="input-search">
+                    </div>
+                    <div class="file-type">
+                        <!-- <label for="cars">Choose a car:</label> -->
+                        <select name="file-type" id="fileType">
+                            <option value="allfile">All File Type</option>
+                            <option value="docx">DOCX</option>
+                            <option value="pdf">PDF</option>
+                            <option value="xlsx">XLSX</option>
+                        </select>
+                    </div>
+                    <div class="file-status">
+                        <!-- <label for="cars">Choose a car:</label> -->
+                        <select name="file-status" id="fileStatus">
+                            <option value="allstatus">All Status Type</option>
+                            <option value="approved">Approved</option>
+                            <option value="pending">Pending</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                    </div>
+                    <div class="upload-btn-box">
+                        <button class="upload-btn">Upload Document</button>
+                    </div>
+                </section>
+            <!-- Project documents bar  -->
+                <section class="project-documents-bar"> 
+                    <nav class="grid-line upload-grid-line">
+                        <ul class="root-line">
+                            <li>Document Name</li>
+                            <li>Format</li>
+                            <li>Version</li>
+                            <li>Uploaded By</li>
+                            <li>Upload Date</li>
+                            <li>Status</li>
+                            <li>Actions</li>
+                            
+                         </ul>
+                    </nav>
+                </section>
+            </section>
+        </main>
+
+        <section class="model-workspace">
+            <form id="workspaceForm">
+                <header>
+                    <h2> Enter Workspace Details</h2>
+                    <button type="button" class="close-workspace">x</button>
+                </header>
+
+                <div class="workspace-projectId">
+                    <label>Project ID</label>
+                    <input type="text" name="workspaceProjectId" required readonly id="workspaceProjectId">
+                </div>
+
+                <div class="workspace-clientName">
+                    <label>Client</label>
+                    <input type="text" name="clientName" required id="clientName" placeholder="enter client name">
+                </div>
+
+                <div class="workspace-sub-date">
+                    <label>Submission Deadline</label>
+                    <input type="date" name="submissionDeadline" id="submissionDeadline" placeholder="enter submission deadline date">
+                </div>
+
+                <div>
+                    <label>Overall Progress (%)</label>
+                    <input type="number"
+                            id="overallProgress"
+                            name="overallProgress"
+                            placeholder="Enter overall progress percentage"
+                            min="0"
+                            max="100"
+                            step="1"
+                            required>
+                </div>
+
+               <div>
+                    <label>Assigned Team (comma separated)</label>
+                    <input type="text" name="assignedTeam" placeholder="enter team members separated by comma if multiple">
+               </div>
+
+                <div>
+                    <label>Project Manager</label>
+                    <input type="text" name="projectManager" placeholder="enter project manager">
+                </div>
+
+                <div>
+                    <label>Priority</label>
+                    <select name="priority">
+                        <option value="low">Low</option>
+                        <option value="moderate">Moderate</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+
+               <div>
+                    <label>Stage</label><br>
+                    <select name="stage">
+                        <option value="in review">In Review</option>
+                        <option value="completed">Completed</option>
+                        <option value="approved">Approved</option>
+                        <option value="draft">Draft</option>
+
+                    </select>
+                </div>
+
+                <div class="workspace-btn-box">
+                    <button type="submit" class="new-workspace-btn">Add Workspace</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="model-upload-documents">
+            <form id="uploadDocumentsForm">
+                <header>
+                    <h2> Enter Document Details</h2>
+                    <button type="button" class="close-upload-document">x</button>
+                </header>
+
+                <div class="upload-projectId">
+                    <label>Project ID</label>
+                    <input type="text" name="uploadProjectId" required readonly id="uploadProjectId">
+                </div>
+
+                <div class="document-workspaceId">
+                    <label>Workspace ID</label>
+                    <input type="text" name="documentworkspaceId" required readonly id="documentworkspaceId">
+                </div>
+
+                <div class="workspace-documentName">
+                    <label>Document Name</label>
+                    <input type="text" name="documentName" required id="documentName" placeholder="enter document name">
+                </div>
+
+                 <div>
+                    <label>Format</label>
+                    <select name="format">
+                        <option value="pdf">PDF</option>
+                        <option value="xlsx">XLSX</option>
+                        <option value="docx">DOCX</option>
+                    </select>
+                </div>
+
+                <div class="workspace-sub-date">
+                    <label>Version</label>
+                    <input type="text" name="documentVersion" id="documentVersion" placeholder="enter document version">
+                </div>
+
+
+               <div>
+                    <label>Uploaded By</label>
+                    <input type="text" name="uploadedBy" placeholder="enter team members separated by comma if multiple">
+               </div>
+
+               <div class="">
+                    <label>Status</label><br>
+                    <select name="status">
+                        <option value="pending">Pending</option>
+                        <option value="approved">Approved</option>
+                        <option value="rejected">Rejected</option>
+
+                    </select>
+                    
+                </div>
+
+                <div class="upload-btn-box">
+                    <button type="submit" class="new-document-btn">Upload Document</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="update-upload-doc-status-model">
+            
+            <form  id="updateDocumentStatusForm">
+                <header>
+                    <h2>
+                        Update Document Status
+                    </h2>
+                    <button type="button" class="close-update-status-btn" data-action="update-status">xe</button>
+                </header>
+                <div>
+                    <label>Status</label><br>
+                    <select name="status">
+                        <option value="pending">Pending</option>
+                        <option value="approved">Approved</option>
+                        <option value="rejected">Rejected</option>
+
+                    </select>
+                </div>
+
+                <div class="update-upload-doc-status">
+                    <button type="submit" class="update-upload-doc-status-btn">Update Status</button>
+                </div>
+            </form>
+          </section>
+
+        
+    </div>
+    <script type="module" src="../../js/pages/projectDocuments.js"></script>
+</body>
+</html>
+
+ <!-- <h3>Document</h3>
+
+                <label>Document Name</label><br>
+                <input type="text" id="docName"><br><br>
+
+                <label>Format</label><br>
+                <input type="text" id="docFormat"><br><br>
+
+                <button type="button" id="addDoc">Add Document</button> -->

@@ -1,0 +1,32 @@
+.app{
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    height: 100vh;
+    
+}
+/* sidebar styles  */
+.app-aside{
+   border-right: 1px solid #E5E7EB;
+}
+
+/* main styles  */
+.app-main{
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.app-pipeline-container{
+    flex:1;
+    overflow: auto;
+}
+
+.pipeline-tabs{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    padding: 10px;
+    /* border: 1px solid red; */
+    
+}
