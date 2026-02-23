@@ -2,7 +2,7 @@
 export const loadJsonData= async ()=>{
     const token=localStorage.getItem("login-token");
     try{
-        const res=await fetch("http://localhost:5200/api/projects",{
+        const res=await fetch("https://rfp-be-ltx9.onrender.com/api/projects",{
             method:"GET",
             headers:{
                 Authorization:`Bearer ${token}`
@@ -27,7 +27,7 @@ export const loadJsonData= async ()=>{
 export const loadSingleProject=async(id)=>{
     const token=localStorage.getItem("login-token");
     try{
-        const res=await fetch(`http://localhost:5200/api/projects/${id}`,{
+        const res=await fetch(`https://rfp-be-ltx9.onrender.com/api/projects/${id}`,{
             method:"GET",
              headers:{
                 Authorization:`Bearer ${token}`
@@ -48,7 +48,7 @@ export const loadSingleProject=async(id)=>{
 
 export const handleLogIn= async (username,password)=>{
      try{
-        const res=await fetch(`http://localhost:5200/api/auth/login`,{
+        const res=await fetch(`https://rfp-be-ltx9.onrender.com/api/auth/login`,{
             method:"POST",
             headers:{
                 "Content-Type": "application/json"

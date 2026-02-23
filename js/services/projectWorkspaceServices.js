@@ -1,7 +1,7 @@
 export async function projectWorkspace(projectId){
     const token=localStorage.getItem("login-token");
     try{
-        const response=await fetch(`http://localhost:5200/api/workspace/${projectId}`,{
+        const response=await fetch(`https://rfp-be-ltx9.onrender.com/api/workspace/${projectId}`,{
         method:"GET",
         headers:{
                 Authorization:`Bearer ${token}`
@@ -35,7 +35,7 @@ export async function addNewWorkspace(formdata){
     }
     // console.log(workspace);
     try{
-            const res =await fetch("http://localhost:5200/api/workspace",{
+            const res =await fetch("https://rfp-be-ltx9.onrender.com/api/workspace",{
             method:"POST",
             
             headers:{
@@ -71,7 +71,7 @@ export async function uploadNewDocument(formData){
         uploadedBy:formData.uploadedBy
     }
     try{
-        const res= await fetch(`http://localhost:5200/api/workspace/${formData.documentworkspaceId}/upload`,{
+        const res= await fetch(`https://rfp-be-ltx9.onrender.com/api/workspace/${formData.documentworkspaceId}/upload`,{
         method:"POST",
         headers:{
             "Content-Type":"application/json",
@@ -102,7 +102,7 @@ export async function updateDocumentStatus(formData){
     const token=localStorage.getItem("login-token");
     console.log(JSON.stringify(formData.status))
     try{
-            const res=await fetch(`http://localhost:5200/api/workspace/${formData.workspaceId}/upload/${formData.documentId}`,{
+            const res=await fetch(`https://rfp-be-ltx9.onrender.com/api/workspace/${formData.workspaceId}/upload/${formData.documentId}`,{
             method:"PATCH",
             headers:{
                 "Content-Type":"application/json",
