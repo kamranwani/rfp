@@ -1,5 +1,6 @@
 export async function projectWorkspace(projectId){
     const token=localStorage.getItem("login-token");
+    console.log(token);
     try{
         const response=await fetch(`https://rfp-be-ltx9.onrender.com/api/workspace/${projectId}`,{
         method:"GET",
@@ -124,6 +125,10 @@ export async function updateDocumentStatus(formData){
             success:true,
             data
         }   
+        return {
+    success: true,
+    data
+};
     }
     catch(err){
         throw(err.message);

@@ -26,13 +26,14 @@ const documentworkspaceId=document.querySelector("#documentworkspaceId");
 const closeUpdateStatusBtn=document.querySelector(".close-update-status-btn");
 const updateUploadDocStatusModel=document.querySelector(".update-upload-doc-status-model");
 const updateDocumentStatusForm=document.querySelector("#updateDocumentStatusForm");
+const uploadDocumentsForm = document.querySelector("#uploadDocumentsForm");
 
 
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
-// console.log(id);
+console.log(id);
 
 let workspace=null;
 
@@ -59,13 +60,13 @@ getProjectWorkspaceDocuments(id);
 
 
 
-if (!workspace) {
-  uploadBtn.disabled = true;
-  uploadBtn.style.backgroundColor="black";
-  uploadBtn.innerText="Disabled - add workspace first";
-  uploadBtn.style.cursor="auto";
+// if (!workspace) {
+//   uploadBtn.disabled = true;
+//   uploadBtn.style.backgroundColor="black";
+//   uploadBtn.innerText="Disabled - add workspace first";
+//   uploadBtn.style.cursor="auto";
 
-}
+// }
 
 workspaceProjectId.value=id;
 uploadProjectId.value=id;
@@ -130,7 +131,7 @@ const generateTeam=(team)=>{
 const generateDocumentRows=()=>{
    return workspace?.uploads?.map(doc=>{
         return(
-            `<ul class="" data-id="${doc._id}>
+            `<ul class="" data-id="${doc._id}">
                 <li class="document-name">${doc.documentName}</li>
                 <li class= "${doc.format}">${doc.format}</li>
                 <li class="document-version">${doc.version}</li>

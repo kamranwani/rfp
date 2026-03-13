@@ -1,6 +1,6 @@
 import { STATUS } from "./utils/constant.js";
 import { handleCardFuntions } from "./components/card.js";
-import { loadJsonData } from "./services/api.js";
+import { loadJsonData,AddNewRfpProject } from "./services/api.js";
 
 
 
@@ -8,6 +8,16 @@ import { loadJsonData } from "./services/api.js";
 const pipelinetabs=document.querySelector("#pipeline-tabs");
 const projectsGrid=document.querySelector(".projects-grid");
 const tabs = document.querySelectorAll(".tab-item"); 
+const newRfpBtn=document.querySelector(".new-rfp-btn");
+const addNewRfpModal=document.querySelector(".add-new-rfp-modal");
+const closeAddNewRfpModal=document.querySelector(".close-add-new-rfp-modal");
+const newRfpAddBtnid=document.querySelector("#newRfpAddBtnid");
+const addNewRfpForm=document.querySelector("#addNewRfpForm");
+
+
+
+
+
 
 let projectCardStatus = {};
 
@@ -33,6 +43,19 @@ const authGuard=()=>{
 
 authGuard();
 // filtering projects based on status
+
+// loads json data 
+const loadData=async()=>{
+    const data=await loadJsonData();
+    rpfData=data.data;
+    // console.log("rfp data",rpfData);
+    let filteredProjects = filterProjects(currentStatus);
+
+    renderProjects(filteredProjects);
+    const counts=countProjectByStatus(rpfData)
+    updateTabCounts(counts);
+}
+loadData();
 
 const filterProjects=(status)=>{
     
@@ -64,7 +87,7 @@ const filterProjects=(status)=>{
 // render projects to ui 
 
 const renderProjects=(projects)=>{
-    console.log(projects)
+    console.log("here",projects)
     if(projects.length<=0){
         projectsGrid.innerHTML="<div>No Projects To Show</div>"
         return;
@@ -84,7 +107,10 @@ const renderProjects=(projects)=>{
                         </header>
                         <main class="project-card-main">
                             <h2 class="rfp-name">${proj.projectName}</h2>
-                            <p class="rfp-submission-date">${(proj.tenderSubDate).slice(0,proj.tenderSubDate.lastIndexOf("T"))}</p> 
+                           
+                            <p class="rfp-submission-date">DOC: ${(proj.createdAt).slice(0,proj.tenderSubDate.lastIndexOf("T"))}</p> 
+                            <p class="rfp-submission-date">Submission Date: ${(proj.tenderSubDate).slice(0,proj.tenderSubDate.lastIndexOf("T"))}</p> 
+
                         </main>
                         <footer class="project-card-footer">
                             <button class="project-card-button" data-action=${proj.rfpNumber} data-index=${proj._id}>Documents</button>
@@ -129,17 +155,33 @@ const updateTabCounts = (counts) => {
 };
 
 
-// loads json data 
-const loadData=async()=>{
-    const data=await loadJsonData();
-    rpfData=data;
-    let filteredProjects = filterProjects(currentStatus);
-
-    renderProjects(filteredProjects);
-    const counts=countProjectByStatus(rpfData)
-    updateTabCounts(counts);
+const handleAddNewRFPModal=()=>{
+    addNewRfpModal.style.display="flex";
 }
-loadData();
+
+const handleCloseNewRFP=()=>{
+    addNewRfpModal.style.display="none";
+
+}
+
+async function handleAddNewRFP(e){
+    e.preventDefault();
+    const formdata=new FormData(addNewRfpForm);
+    const data= Object.fromEntries(formdata);
+    console.log(data);
+    const newProject={
+        projectName:data.RFPName,
+        rfpNumber:data.RFPNumber,
+        tenderSubDate: new Date(data.RFPSubDate)
+    };
+    const response= await AddNewRfpProject(newProject);
+    console.log(response);
+}
+
+newRfpBtn.addEventListener('click',handleAddNewRFPModal);
+closeAddNewRfpModal.addEventListener('click',handleCloseNewRFP);
+addNewRfpForm.addEventListener("submit",handleAddNewRFP);
+
 
 
 

@@ -118,7 +118,32 @@
                     </div>
                 </div>
              </div>
+
+             <!-- modal adding new rfp  -->
+
+             <div class="add-new-rfp-modal">
+                <form id="addNewRfpForm">
+                    <header>
+                        <h2>Add New RFP</h2>
+                        <button type="button" class="close-add-new-rfp-modal">x</button>
+                    </header>
+                    <div>
+                        <label for="RFPName">RFP Name:</label>
+                        <input type="text" name="RFPName" id="RFPName" required placeholder="enter RFP name">
+                    </div>
+                    <div>
+                        <label for="RFPSubDate">Submission Date:</label>
+                        <input type="date" name="RFPSubDate" id="RFPSubDate" required placeholder="enter RFP Submission Date">
+                    </div>
+                    <div>
+                        <label for="RFPNumber">RFP Number:</label>
+                        <input type="text" name="RFPNumber" id="RFPNumber" required placeholder="enter RFP Number">
+                    </div>
+                    <button type="submit" id="newRfpAddBtnid" class="newRfpAddBtn">Add RFP</button>
+                </form>
+             </div>
         </main>
+
     </div>
     <script  type="module" src="../../js/main.js"></script>
     <script defer src="../../js/components/sidebar.js"></script>
