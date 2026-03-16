@@ -105,3 +105,28 @@ export const AddNewRfpProject=async(project)=>{
         throw(err);
     }
 }
+
+export const updateProjectStatusState=async(status,id)=>{
+    const token = localStorage.getItem("login-token");
+    console.log(status,id);
+    try{
+        const res= await fetch(`https://rfp-be-ltx9.onrender.com/api/projects/${id}`,{
+        method:"PUT",
+        headers:{
+            "Content-Type":"application/json",
+            Authorization:`Bearer ${token}`
+        },
+        body:JSON.stringify(status)
+    })
+
+    if (!res.ok) {
+    const errorData = await res.json();
+    throw new Error(errorData.message || "cannot add new project");
+}
+
+    return await res.json();
+    }
+    catch(err){
+        throw(err);
+    }
+}

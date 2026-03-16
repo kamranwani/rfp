@@ -9,11 +9,25 @@
       integrity="sha512-..."
       crossorigin="anonymous"
       referrerpolicy="no-referrer" />
+      <link rel="stylesheet" href="../../styles/main.css">
 
 </head>
 <body>
   <div id="container">
-    
+    <div class="project-status">
+
+    </div>
+    <form action="" class="updateStatus">
+      <select id="status" name="status">
+      <option value="draft" selected>Draft</option>
+        <option value="review">Review</option>
+        <option value="submitted">Submitted</option>
+        <option value="approved">Approved</option>
+      </select>
+      <button>Update</button>
+      <button type="button" class="closestatus">close</button>
+
+    </form>
   </div>
 
     <script type="module" src="../../js/pages/projectDashboard.js"></script>
