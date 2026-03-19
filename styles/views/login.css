@@ -21,12 +21,15 @@
     align-items: center;
     gap: 10px;
     margin-bottom: 10px;
+    padding: 5px;
+    /* background-color: green; */
 }
 .logo>img{
     width: 40px;
     height: 40px;
     object-fit: cover;
     border-radius: 50%;
+    
     
 }
 .logo>h2{

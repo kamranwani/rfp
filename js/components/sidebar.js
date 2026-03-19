@@ -20,7 +20,7 @@
     // console.log(projectsDashboard,documentView);
 
 
-    asideLogoImg.src="/assets/logo-img.jpeg";
+    asideLogoImg.src="/assets/nexgenlogok.png";
     asideLogoText.innerHTML="RFP Manager";
 
     const currentPath=window.location.pathname;
