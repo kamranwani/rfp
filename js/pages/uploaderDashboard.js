@@ -6,11 +6,11 @@ const authGuard=()=>{
     const role =localStorage.getItem("login-role");
     if(!token && (role != "admin" || role != "uploader")){
         alert("need to login first");
-        window.location.href="http://rfp-track.netlify.app//index.html"
-        }    }
+        window.location.href="https://rfp-track.netlify.app/index.html"
+    }
 
     authGuard();
-console.log("dashboard");
+console.log("dashboard");}
 
 const loadData=async()=>{
     console.log("fetching");
@@ -87,6 +87,6 @@ document.getElementById("logoutBtn").onclick = () => {
     localStorage.removeItem("login-user");
     localStorage.removeItem("login-role");
 
-    window.location.href = "http://https://rfp-track.netlify.app/index.html";
+    window.location.href = "https://rfp-track.netlify.app/index.html";
 };
 projectGrid.addEventListener("click",handleGridEvents);
