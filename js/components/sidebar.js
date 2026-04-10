@@ -107,7 +107,7 @@
     }
 
     const handleAsideLogin=(elm)=>{
-        window.location.href="http://localhost:5500/index.html";
+        window.location.href="http://rfp-track.netlify.app//index.html";
         elm.classList.add("active-nav");
         console.log("login",elm);
     }
@@ -154,7 +154,7 @@
     const handleLogout=()=>{
         localStorage.clear("login-token");
         localStorage.clear("login-role");
-        window.location.href="http://localhost:5500/index.html";
+        window.location.href="http://rfp-track.netlify.app//index.html";
 
 
     }

@@ -4,7 +4,7 @@ export const authGuard=()=>{
     const role =localStorage.getItem("login-role");
     if(!token && role != "admin"){
         alert("need to login first");
-        window.location.href="http://localhost:5500/index.html"
+        window.location.href="http://rfp-track.netlify.app//index.html"
     }
         
 }

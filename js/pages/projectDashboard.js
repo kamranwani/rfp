@@ -54,7 +54,7 @@ const handleupdateprojStatus=async (e)=>{
             status:data.status
         }
         await updateProjectStatusState(newStatus,id);
-         window.location.href=`http://localhost:5500/pages/projects-dashboard/projects-dashboard.html`;
+         window.location.href=`http://rfp-track.netlify.app//pages/projects-dashboard/projects-dashboard.html`;
     }else alert("change");
 }
 
