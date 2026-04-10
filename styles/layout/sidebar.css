@@ -8,21 +8,21 @@
 
 .aside-logo{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 24px;
     border-bottom: 1px solid #E5E7EB;
     width: 100%;
     /* background-color: aqua; */
-    padding: 0px 0px 10px 0px;
+    padding: 0px 20px 10px 20px;
     margin-bottom: 20px;
 }
 
 .aside-logo-img{
-    width: 40px;
-    height: 40px;
+   width: 100px;
     object-fit: cover;
-    border-radius: 50%;
+    /* border-radius: 50%; */
 }
 
 .aside-navigation>ul{
@@ -39,11 +39,12 @@
     /* background-color: blueviolet; */
     padding: 20px;
     color: #646464;
+    cursor: pointer;
 
 }
 .active-nav{
-    background-color: #EFF6FF;
-   color:  #2563EB !important;
+    background-color: #ddebfdfb;
+   color:  #183E71 !important;
 }
 
 

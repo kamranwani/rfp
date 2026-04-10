@@ -27,6 +27,9 @@ const closeUpdateStatusBtn=document.querySelector(".close-update-status-btn");
 const updateUploadDocStatusModel=document.querySelector(".update-upload-doc-status-model");
 const updateDocumentStatusForm=document.querySelector("#updateDocumentStatusForm");
 const uploadDocumentsForm = document.querySelector("#uploadDocumentsForm");
+const goHome = document.querySelector(".home-btn");
+
+
 
 
 
@@ -77,7 +80,7 @@ const renderUI=()=>{
     
     newWorkspaceBtn.disabled = true;
     newWorkspaceBtn.style.backgroundColor="black";
-    newWorkspaceBtn.innerText="Disabled - add workspace first";
+    newWorkspaceBtn.innerText=" workspace already available";
     newWorkspaceBtn.style.cursor="auto";
 
     uploadBtn.disabled = false;
@@ -162,8 +165,7 @@ const handleWorkspaceForm= async (e)=>{
     const formData= new FormData(workspaceForm);
     const data=Object.fromEntries(formData);
     const response=await addNewWorkspace(data);
-    console.log(response,"hi")
-    // if()
+    window.location.href=`project-documents.html?id=${id}`
 }
 
 const handleCloseWorkspaceModel=()=>{
@@ -184,7 +186,7 @@ const handleUploadDocument =async (e)=>{
    if(response.success === "true"){
     alert("Document Added Successfully")
    }
-   window.location.href=`http://localhost:5500/pages/project-documents-view/project-documents.html?id=${id}`
+   window.location.href=`project-documents.html?id=${id}`
 }
 
 const handleUploadGridLine = (e)=>{
@@ -229,7 +231,7 @@ const handleUpdateDocumentStatus= async (e)=>{
     }
     // console.log(updatedStatusBlock);
     const result= await updateDocumentStatus(updatedStatusBlock);
-    window.location.href=`http://localhost:5500/pages/project-documents-view/project-documents.html?id=${id}`
+    window.location.href=`project-documents.html?id=${id}`
 
 };
 
@@ -241,6 +243,9 @@ closeUploadDocument.addEventListener("click",handleCloseUploadModel);
 uploadDocumentsForm.addEventListener("submit",handleUploadDocument);
 closeUpdateStatusBtn.addEventListener("click",handleCloseUpdateStatusModel);
 updateDocumentStatusForm.addEventListener("submit",handleUpdateDocumentStatus);
+goHome.addEventListener("click",()=>{
+    window.location.href="/pages/projects-dashboard/projects-dashboard.html"
+})
 
 
     
