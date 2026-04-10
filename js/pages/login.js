@@ -23,7 +23,7 @@ async function handleLoginSubmit (e){
             window.location.href="/pages/projects-dashboard/projects-dashboard.html";
         }
         else if (token && role === "uploader"){
-            console.log("add page");
+            window.location.href="/pages/uploader-dashboard/uploader-dashboard.html";
         }   
         else alert("invalid");
     }

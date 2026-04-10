@@ -34,6 +34,7 @@ const authGuard=()=>{
     console.log("hi");
     const token =localStorage.getItem("login-token");
     const role =localStorage.getItem("login-role");
+    console.log(token,role);
     if(!token && role != "admin"){
         alert("need to login first");
         window.location.href="http://localhost:5500/index.html"
@@ -107,14 +108,13 @@ const renderProjects=(projects)=>{
                         </header>
                         <main class="project-card-main">
                             <h2 class="rfp-name">${proj.projectName}</h2>
-                           
-                            <p class="rfp-submission-date">DOC: ${(proj.createdAt).slice(0,proj.tenderSubDate.lastIndexOf("T"))}</p> 
                             <p class="rfp-submission-date">Submission Date: ${(proj.tenderSubDate).slice(0,proj.tenderSubDate.lastIndexOf("T"))}</p> 
 
                         </main>
                         <footer class="project-card-footer">
-                            <button class="project-card-button" data-action=${proj.rfpNumber} data-index=${proj._id}>Documents</button>
-                            <button class="project-card-button" data-id=${proj.rfpNumber} data-index=${proj._id}>Details</button>
+                            <button class="project-card-button documents" data-action=${proj.rfpNumber} data-index=${proj._id}>Documents</button>
+                            <button class="project-card-button details" data-id=${proj.rfpNumber} data-index=${proj._id}>Details</button>
+                            <button class="project-card-button note" data-note=addnote  data-index=${proj._id}>Note</button>
                         </footer>
                     </div>`
                     genrateHtml += card;
@@ -175,6 +175,7 @@ async function handleAddNewRFP(e){
         tenderSubDate: new Date(data.RFPSubDate)
     };
     const response= await AddNewRfpProject(newProject);
+    window.location.href="/pages/projects-dashboard/projects-dashboard.html";
     console.log(response);
 }
 
@@ -185,3 +186,4 @@ addNewRfpForm.addEventListener("submit",handleAddNewRFP);
 
 
 
+{/* <p class="rfp-submission-date">DOC: ${(proj.createdAt).slice(0,proj.tenderSubDate.lastIndexOf("T"))}</p>  */}

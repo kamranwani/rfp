@@ -39,7 +39,7 @@ export const loadSingleProject = async (id) => {
     );
 
     if (res.status === 401) {
-        localStorage.removeItem("login-token");
+        // localStorage.removeItem("login-token");
         window.location.href = "/login.html";
         return;
     }

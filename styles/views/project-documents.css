@@ -1,5 +1,7 @@
 .app-main{
     padding: 20px;
+    background-color: #f1f1f1;
+    min-height: 100vh;
 }
 .app-header{
     margin-bottom: 20px;
@@ -14,20 +16,26 @@ margin-bottom: 20px;
     display: flex;
     gap: 10px;
     align-items: center;
-    /* border-bottom: .1px solid #E5E7EB; */
+    /* border-bottom: .1px solid #ebe5e5; */
+    background-color: #fff;
+    border-radius: 8px;
     /* padding: 0px 20px; */
 }
 .line-break{
     height: 1px;
     width: 94%;
     margin: 0 auto;
-    background-color: #E5E7EB;;
+    background-color: #E5E7EB;
+    border-radius: 8px;
 }
 .project-details-bar-bottom{
     /* border: 1px solid black; */
     display: flex;
     gap: 10px;
     align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+
 
 }
 .upload-document-bar{
@@ -58,6 +66,7 @@ margin-bottom: 20px;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     padding: 20px 40px;
+    /* background-color: #fff; */
 }
 .box{
     display: flex;
@@ -97,14 +106,17 @@ margin-bottom: 20px;
 }
 .project-documents-bar{
     box-shadow: 0px 4px 14px 0px #00000014;
-    border-radius: 20px;
+    border-radius: 8px;
     margin-bottom: 20px;
+    background-color: #fff;
 }
 .upload-document-bar{
     padding: 20px;
     display: flex;
     gap: 8px    ;
     border-bottom: .1px solid #E5E7EB;
+    background-color: #fff;
+    border-radius: 8px;
     
 }
 .searchDocument{
@@ -145,7 +157,7 @@ select:focus {
 }
 
 .root-line{
-    background-color: #FAFAFA;
+    background-color: #F2f2f2;
 }
 .document-name{
     text-transform: capitalize;
@@ -212,6 +224,7 @@ select:focus {
     display: none;
     justify-content: center;
     align-items: center;
+    /* border: 1px solid black; */
 }
 
 .model-upload-documents{
@@ -314,4 +327,7 @@ select:focus {
     z-index: 10;
     width: 100px;
 } */
+.app-pipeline-container{
+    border: 1px solid black;
+}
 

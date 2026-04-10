@@ -6,7 +6,7 @@
 }
 /* sidebar styles  */
 .app-aside{
-   border-right: 1px solid #E5E7EB;
+   border-right: 1px solid #dcdcdc;
 }
 
 /* main styles  */
@@ -20,6 +20,7 @@
 .app-pipeline-container{
     flex:1;
     overflow: auto;
+    background-color: #F8F7F4;
 }
 
 .pipeline-tabs{

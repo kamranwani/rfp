@@ -21,7 +21,7 @@
 
 
     asideLogoImg.src="/assets/nexgenlogok.png";
-    asideLogoText.innerHTML="RFP Manager";
+    // asideLogoText.innerHTML="RFP Manager";
 
     const currentPath=window.location.pathname;
     console.log(currentPath);

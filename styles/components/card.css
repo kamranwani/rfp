@@ -12,7 +12,8 @@
     padding: 16px;
     align-content: space-between;
     box-shadow: 0px 1px 3px 0px #0000001A;
-    border-radius:16px ;
+    border-radius:8px ;
+    background-color: #fff;
     
 }
 
@@ -22,6 +23,7 @@
     align-items: center;
     height: 40px;
     /* border: 1px solid black; */
+    color: #4B5563;
 }
 
 .project-card-main{
@@ -31,13 +33,14 @@
     font-size: 12px;
     font-weight: 600;
     font-family:'Times New Roman', Times, serif;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
 
 }
 
 .project-card-footer{
     display: flex;
     justify-content:space-between;
+    color: #4B5563;
     
     height: 40px;
     /* border: 1px solid black; */
@@ -47,6 +50,8 @@
     flex:1  ;
     display:flex;
     justify-content: flex-end;
+    color: #4B5563;
+
 }
 .rfp-number{
     font-size: 12px;
@@ -67,17 +72,18 @@
     cursor: pointer;
     text-transform: capitalize;
     background: none;
-    border: .5px solid #0000001A;
-    font-size: 10px;
-    padding: 5px 40px;
-    border-radius: 8px;
+       
+    font-size: 8px;
+    padding: 2px 12px;
+    width: 72px;
+    height: 26px;
+    border-radius: 4px;
     transition: all;
     transition-duration: 3ms;
+    text-align: center;
 }
 
-.project-card-button:hover{
-    background-color: #f2f2f2;
-}
+
 
 .card-dropdown>ul{
     display: flex;
@@ -95,11 +101,47 @@
 }
 .rfp-submission-date{
     font-weight: 400;
-    font-size: 12px;
+    font-size: 9px;
+    color: #4B5563;
+
 }
 
 .rfp-name{
     margin-bottom: 8px;
     height: 50px;
     overflow: hidden;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+.documents{
+    color: blue;
+    /* background-color: #2563EB; */
+     border: .1px solid blue;
+
+}
+.note{
+    color: orange;
+     border: .1px solid orange;
+
+}
+.details{
+    color: purple;
+     border: .1px solid purple;
+
+}
+
+.note:hover{
+    background-color: orange;
+    color: #fff;
+}
+
+.documents:hover{
+    background-color: blue;
+    color: #fff;
+}
+.details:hover{
+    background-color: purple;
+    color: #fff;
 }

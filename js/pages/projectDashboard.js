@@ -36,13 +36,14 @@ renderUi();
 const updateProjectStatus=(e)=>{
     currentStatus =e.target.dataset.status;
     updateStatus.style.display="block";
+    
 }
 
 const closeStatus=()=>{
     updateStatus.style.display="none";
 
 }
-const handleupdateprojStatus=(e)=>{
+const handleupdateprojStatus=async (e)=>{
     e.preventDefault();
     const formdata=new FormData(updateStatus);
     const data= Object.fromEntries(formdata);
@@ -52,7 +53,8 @@ const handleupdateprojStatus=(e)=>{
         const newStatus={
             status:data.status
         }
-        updateProjectStatusState(newStatus,id);
+        await updateProjectStatusState(newStatus,id);
+         window.location.href=`http://localhost:5500/pages/projects-dashboard/projects-dashboard.html`;
     }else alert("change");
 }
 
