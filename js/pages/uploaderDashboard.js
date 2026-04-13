@@ -1,16 +1,22 @@
 const projectGrid= document.querySelector(".project-grid")
 
-const authGuard=()=>{
-    console.log("hi");
-    const token =localStorage.getItem("login-token");
-    const role =localStorage.getItem("login-role");
-    if(!token && (role != "admin" || role != "uploader")){
-        alert("need to login first");
-        window.location.href="https://rfp-track.netlify.app/index.html"
+import { loadJsonData } from "../services/api.js"; 
+import { fetchProjectData } from "../services/uploaderServices.js";
+
+    const authGuard=()=>{
+        console.log("hi");
+        const token =localStorage.getItem("login-token");
+        const role =localStorage.getItem("login-role");
+        console.log(token,role)
+        if(!token && (role != "admin" || role != "uploader")){
+            alert("need to login first");
+            window.location.href="http://https://rfp-track.netlify.app/index.html"
+        }
+            
     }
 
     authGuard();
-console.log("dashboard");}
+console.log("dashboard");
 
 const loadData=async()=>{
     console.log("fetching");
