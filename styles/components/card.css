@@ -145,3 +145,52 @@
     background-color: purple;
     color: #fff;
 }
+
+.project-card {
+    padding: 16px;
+    border-radius: 14px;
+    background: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: all 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 35px rgba(0,0,0,0.08);
+}
+
+.rfp-status {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.rfp-status:contains("APPROVED") {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.rfp-status:contains("DRAFT") {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.rfp-status:contains("REVIEW") {
+    background: #e0e7ff;
+    color: #4338ca;
+}
+
+.project-card-button {
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 12px;
+    transition: 0.2s;
+}
+
+.project-card-button:hover {
+    transform: translateY(-1px);
+}
+body {
+    background: radial-gradient(circle at top, #eef2ff, #f1f5f9);
+}

@@ -52,3 +52,4 @@ const handleForgotPassword=()=>{
 loginForm.addEventListener("submit",handleLoginSubmit);
 formBtnPasswordVisible.addEventListener("click",handlePasswordVisiblity);
 forgetPasswordBtn.addEventListener("click",handleForgotPassword);
+

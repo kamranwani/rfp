@@ -1,0 +1,47 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Project Details</title>
+
+        <!-- Font (premium feel) -->
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="../../styles/views/upload-single-project.css">
+    </head>
+
+    <body>  
+        <div class="wrappers">
+
+            <!-- LEFT: Project Info -->
+            <div class="project-wrapper"></div>
+
+            <!-- RIGHT: Documents -->
+            <div class="project-documents"></div>
+
+        </div>
+
+        <!-- ✅ Modal moved OUTSIDE wrapper (important layering fix) -->
+        <div class="modal" id="uploadModal">
+            <div class="modal-content">
+                <h3>Upload Document</h3>
+
+               <input type="file" id="fileInput" accept=".pdf,.docx,.xlsx" />
+
+                <input placeholder="Document Name" id="docName" />
+                <input placeholder="Format" id="format" />
+                <input placeholder="Version" id="version" />
+                <input placeholder="Remark" id="remark" />
+                <input placeholder="Uploaded By" id="uploadedBy" readonly/>
+
+                <div style="display:flex; gap:10px; margin-top:10px;">
+                    <button class="btn btn-primary" id="submitUpload">Submit</button>
+                    <button class="btn btn-secondary" id="cancelUpload">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <script type="module" src="../../js/pages/uploaderSingleProject.js"></script>
+    </body>
+    </html>

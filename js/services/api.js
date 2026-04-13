@@ -1,6 +1,8 @@
 // get all projects 
 export const loadJsonData= async ()=>{
+    
     const token=localStorage.getItem("login-token");
+    console.log(token   )
     try{
         const res=await fetch("https://rfp-be-ltx9.onrender.com/api/projects",{
             method:"GET",
@@ -74,6 +76,8 @@ export const handleLogIn= async (username,password)=>{
 
         localStorage.setItem("login-token",data.token);
         localStorage.setItem("login-role",data.role);
+        localStorage.setItem("login-user",data.name);
+
         return data;
     
     }
