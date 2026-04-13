@@ -137,4 +137,37 @@ export async function updateDocumentStatus(formData){
 }
 
 
+export async function deleteDocument(workspaceId, documentId) {
+  const token = localStorage.getItem("login-token");
 
+  try {
+    const response = await fetch(
+      `https://rfp-be-ltx9.onrender.com/api/workspace/${workspaceId}/upload/${documentId}`,
+      {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json"
+        }
+      }
+    );
+
+    // 🔴 Not found
+    if (response.status === 404) {
+      return null;
+    }
+
+    // 🔴 Other errors
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.message || "Failed to delete document");
+    }
+
+    const data = await response.json();
+    return data;
+
+  } catch (err) {
+    console.error("Delete document error:", err.message);
+    throw err;
+  }
+}

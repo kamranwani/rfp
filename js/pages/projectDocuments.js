@@ -1,4 +1,4 @@
-import { addNewWorkspace, projectWorkspace, updateDocumentStatus, uploadNewDocument } from "../services/projectWorkspaceServices.js";
+import { addNewWorkspace, projectWorkspace, updateDocumentStatus, uploadNewDocument ,deleteDocument} from "../services/projectWorkspaceServices.js";
 import { authGuard } from "../../utils/helpers/helpers.js";
 import { loadSingleProject } from "../services/api.js";
 
@@ -134,14 +134,14 @@ const generateTeam=(team)=>{
 const generateDocumentRows=()=>{
    return workspace?.uploads?.map(doc=>{
         return(
-            `<ul class="" data-id="${doc._id}">
+            `<ul class="document-bar" data-id="${doc._id}">
                 <li class="document-name">${doc.documentName}</li>
                 <li class= "${doc.format}">${doc.format}</li>
                 <li class="document-version">${doc.version}</li>
                 <li class="document-uploadedBy">${doc.uploadedBy}</li>
                 <li class="document-uploadDate">${doc.uploadDate.slice(0,doc.uploadDate.lastIndexOf("T"))}</li>
                 <li class="${doc.status}" data-status="${doc.status}" data-id="${doc._id}">${doc.status}</li>
-                <li class="document-actions">h</li>
+                <li class="document-actions" data-action="delete" id=${doc._id} >del</li>
             </ul>`
         ) 
     }).join("")
@@ -189,7 +189,7 @@ const handleUploadDocument =async (e)=>{
    window.location.href=`project-documents.html?id=${id}`
 }
 
-const handleUploadGridLine = (e)=>{
+const handleUploadGridLine = async (e)=>{
     if(e.target.closest("[data-id]")){
      updateUploadDocStatusModel.style.display="flex";
  
@@ -199,6 +199,15 @@ const handleUploadGridLine = (e)=>{
 
     if(e.target.closest("[data-action]"))
         handleCloseUpdateStatusModel();
+
+    const deleteBtn = e.target.closest("[data-action='delete']");
+    if (deleteBtn) {
+        const id = deleteBtn.id;
+        console.log("Delete ID:", id,workspace._id);
+        await deleteDocument(workspace._id,id);
+        window.location.reload();
+        return;
+    }
 }
 
 const handleCloseUpdateStatusModel=()=>{
