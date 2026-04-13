@@ -9,10 +9,26 @@
         integrity="sha512-..."
         crossorigin="anonymous"
         referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../../styles/components/card.css">
+        <link rel="stylesheet" href="../../styles/views/uploader-dashboard.css">
 
 </head>
 <body>
-    uploader
+    <div class="dashboard-header">
+    <div class="header-left">
+        <h2>Uploader Dashboard</h2>
+    </div>
+
+    <div class="header-right">
+        <span id="loggedUser"></span>
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+    </div>
+</div>
+    <div class="wrapper">
+        <div class="project-grid">
+
+        </div>
+    </div>
 </body>
 <script type="module" src="../../js/pages/uploaderDashboard.js"></script>
 </html>

@@ -37,7 +37,7 @@ const authGuard=()=>{
     console.log(token,role);
     if(!token && role != "admin"){
         alert("need to login first");
-        window.location.href="http://localhost:5500/index.html"
+        window.location.href="http://https://rfp-track.netlify.app/index.html"
     }
         
 }
